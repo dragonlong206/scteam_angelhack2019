@@ -1,12 +1,10 @@
 import React, { PureComponent } from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { Text, View, FlatList, StyleSheet } from 'react-native';
 import activityDetail from '../../../data/activity_details.json';
-import { ButtonGroup, ListItem, Icon } from 'react-native-elements';
+import { ButtonGroup, ListItem, Icon, Avatar } from 'react-native-elements';
 import {
   fontSizeCaption,
   fontSizeIcon,
-  fontSizeHeadline,
-  fontSizeBody,
   fontSizeSummaryMoneyBalance,
   colorRed,
   colorGreen,
@@ -15,6 +13,25 @@ import {
 import { ItemSeparator } from '../../components/itemSeparator.js';
 import numeral from 'numeral';
 
+const styles = StyleSheet.create({
+  info: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    paddingTop: 10,
+    paddingBottom: 10
+  },
+  itemLeft: {
+    flex: 2,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  itemRight: {
+    flex: 5
+  }
+});
 export default class ActivityDetail extends PureComponent {
   constructor(props) {
     super(props);
@@ -27,7 +44,9 @@ export default class ActivityDetail extends PureComponent {
     this.state = {
       detail,
       selectedIndex: 0,
-      tabDetail: this.personJoins
+      tabDetail: this.personJoins,
+      name: props.navigation.state.params.title,
+      avatar: props.navigation.state.params.avatar
     };
   }
 
@@ -120,8 +139,6 @@ export default class ActivityDetail extends PureComponent {
 
   getTabDetail = item => {
     const { selectedIndex } = this.state;
-
-    console.log(item);
 
     let rs = (
       <ListItem
@@ -269,12 +286,21 @@ export default class ActivityDetail extends PureComponent {
   };
 
   render() {
-    const { detail, selectedIndex } = this.state;
-    console.log('detail', detail);
+    const { detail, selectedIndex, avatar } = this.state;
 
     return (
       <View>
-        <View />
+        <View>
+          <View style={styles.info}>
+            <View style={styles.itemLeft}>
+              <Avatar size="large" rounded source={{ uri: avatar }} />
+            </View>
+            <View style={styles.itemRight}>
+              <Text style={{ fontSize: 20 }}>{this.state.name}</Text>
+              <Text>Lặp lại hàng tháng</Text>
+            </View>
+          </View>
+        </View>
         <View>
           <ButtonGroup
             onPress={this.updateIndex}

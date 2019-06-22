@@ -16,6 +16,7 @@ import DateTimePicker from "react-native-modal-datetime-picker";
 import moment from "moment";
 import { connect } from "react-redux";
 import _ from "lodash";
+import Modal from "react-native-modal";
 
 const itemActivity = [
   {
@@ -44,7 +45,9 @@ class AddIncome extends PureComponent {
       whoExpense: [],
       dateIncome: null,
       splitIndex: 0,
-      users: []
+      users: [],
+      openCustomSplit: false,
+      userSplits: []
     };
     this.updateIndexSplit = this.updateIndexSplit.bind(this);
   }
@@ -81,7 +84,16 @@ class AddIncome extends PureComponent {
   }
 
   updateIndexSplit(selectedIndex) {
+    const { users } = this.state;
     this.setState({ splitIndex: selectedIndex });
+    if (selectedIndex == 1) {
+      const userSplits = _.filter(users, (item, index) => {
+        return item.checked === true;
+      });
+      if (userSplits && userSplits.length > 0) {
+        this.setState({ openCustomSplit: true });
+      }
+    }
   }
 
   onSelectedActivity = selectedItems => {
@@ -110,19 +122,41 @@ class AddIncome extends PureComponent {
   onPressDateIncome = () => {};
 
   onChangeSelectUsersplit = user => {
-    let { users } = this.state;
+    let { users, userSplits } = this.state;
 
     const _users = _.clone(users);
+    const _userSplits = _.clone(userSplits);
 
-    console.log(user);
     let item = _users.findIndex(i => {
       return i.id === user.id;
     });
     _users[item].checked = !_users[item].checked;
+    if (_users[item].checked == true) {
+      _userSplits.push({ ..._users[item], isSplitMoney: false });
+    } else {
+      _.remove(_userSplits, item => {
+        return item.id == _users[item].id;
+      });
+    }
     this.setState({
-      users: _users
+      users: _users,
+      userSplits: _userSplits
     });
   };
+  
+  onChangeSplitType  = user => {
+    let { userSplits } = this.state;
+
+    const _userSplits = _.clone(userSplits);
+
+    let item = _userSplits.findIndex(i => {
+      return i.id === user.id;
+    });
+    _userSplits[item].isSplitMoney = !_userSplits[item].isSplitMoney;
+    this.setState({
+      userSplits: _userSplits
+    });
+  }
 
   renderUsersplit = () => {
     const { users } = this.state;
@@ -148,6 +182,86 @@ class AddIncome extends PureComponent {
     return result;
   };
 
+  renderCustomSplit = () => {
+    const { users, userSplits } = this.state;
+    // const userSplits = _.filter(users, (item, index) => {
+    //   return item.checked === true;
+    // });
+
+    var result = userSplits.map(item => {
+      return (
+        <View key={item.id} style={incomeStyle.splitIncomeUserItem}>
+          <View style={{ flex: 0.3 }}>
+            <Text>{item.name}</Text>
+          </View>
+          <View style={incomeStyle.customeTypeWrapper}>
+            <View style={incomeStyle.customeTypeItem}>
+              <View style={{ flex: 0.1 }}>
+                <CheckBox
+                  checkedIcon="dot-circle-o"
+                  uncheckedIcon="circle-o"
+                  center
+                  containerStyle={incomeStyle.checkBoxSplitContainer}
+                  checked={!item.isSplitMoney}
+                  onPress={() => {
+                    this.onChangeSplitType(item);
+                  }}
+                />
+              </View>
+              <View style={{ flex: 0.9 }}>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-around",
+                    alignItems: "center"
+                  }}
+                >
+                  <Input
+                    placeholder={"Tỉ lệ"}
+                    keyboardType="numeric"
+                    containerStyle={{ flex: 0.4 }}
+                    textStyle={{ margin: 0, padding: 0, fontSize: 12 }}
+                  />
+                  <Text style={{ fontSize: 18 }}>/</Text>
+                  <Input
+                    keyboardType="numeric"
+                    containerStyle={{ flex: 0.4 }}
+                    value={"100"}
+                  />
+                </View>
+              </View>
+            </View>
+            <View style={incomeStyle.customeTypeItem}>
+              <View style={{ flex: 0.1 }}>
+                <CheckBox
+                  checkedIcon="dot-circle-o"
+                  uncheckedIcon="circle-o"
+                  center
+                  containerStyle={incomeStyle.checkBoxSplitContainer}
+                  checked={item.isSplitMoney}
+                  onPress={() => {
+                    this.onChangeSplitType(item);
+                  }}
+                />
+              </View>
+              <View style={{ flex: 0.9 }}>
+                <Input placeholder={"Số tiền"} keyboardType="numeric" />
+              </View>
+            </View>
+          </View>
+        </View>
+      );
+    });
+    return result;
+  };
+  _renderButton = (text, onPress) => (
+    <TouchableOpacity onPress={onPress}>
+      <View style={incomeStyle.buttonCloseModel}>
+        <Text>{text}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+
   render() {
     const buttons = [{ element: component1 }, { element: component2 }];
     const {
@@ -155,8 +269,10 @@ class AddIncome extends PureComponent {
       whoExpense,
       dateIncome,
       splitIndex,
-      users
+      users,
+      openCustomSplit
     } = this.state;
+
     return (
       <View>
         <View style={style.formItem}>
@@ -248,6 +364,20 @@ class AddIncome extends PureComponent {
             <Button style={{ marginBottom: 10 }} title="Lưu" />
             <Button title="Huỷ bỏ" type="outline" />
           </View>
+        </View>
+        <View>
+          <Modal
+            isVisible={openCustomSplit}
+            swipeDirection="up"
+            style={incomeStyle.bottomModal}
+          >
+            <View style={incomeStyle.modelView}>
+              {this.renderCustomSplit()}
+              {this._renderButton("Lưu", () =>
+                this.setState({ openCustomSplit: false })
+              )}
+            </View>
+          </Modal>
         </View>
       </View>
     );
