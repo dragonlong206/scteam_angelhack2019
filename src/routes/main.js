@@ -2,7 +2,7 @@
  * @Author: Haz
  * @Date: 2019-05-23 10:51:29
  * @Last Modified by: Haz
- * @Last Modified time: 2019-06-22 14:50:35
+ * @Last Modified time: 2019-06-22 14:57:42
  */
 import React from 'react';
 import { Icon } from 'react-native-elements';
@@ -32,7 +32,7 @@ const tabNavigationBottom = createBottomTabNavigator(
       navigationOptions: ({ navigation }) => {
         return {
           tabBarIcon: ({ tintColor }) => <Icon name="home" color={tintColor} />,
-          tabBarLabel: i18n.t('overview')
+          tabBarLabel: i18n.t('Overview')
         };
       }
     },
@@ -43,7 +43,7 @@ const tabNavigationBottom = createBottomTabNavigator(
           tabBarIcon: ({ tintColor }) => (
             <Icon type="feather" name="activity" color={tintColor} />
           ),
-          tabBarLabel: i18n.t('activities')
+          tabBarLabel: i18n.t('Activities')
         };
       }
     },
@@ -74,9 +74,9 @@ const tabNavigationBottom = createBottomTabNavigator(
       navigationOptions: ({ navigation }) => {
         return {
           tabBarIcon: ({ tintColor }) => (
-            <Icon type="feather" name="activity" color={tintColor} />
+            <Icon type="font-awesome" name="group" color={tintColor} />
           ),
-          tabBarLabel: i18n.t('activities')
+          tabBarLabel: i18n.t('Group')
         };
       }
     },
@@ -85,9 +85,9 @@ const tabNavigationBottom = createBottomTabNavigator(
       navigationOptions: ({ navigation }) => {
         return {
           tabBarIcon: ({ tintColor }) => (
-            <Icon type="feather" name="activity" color={tintColor} />
+            <Icon type="simple-line-icon" name="options" color={tintColor} />
           ),
-          tabBarLabel: i18n.t('activities')
+          tabBarLabel: i18n.t('Option')
         };
       }
     }

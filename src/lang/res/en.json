@@ -1,7 +1,9 @@
 {
-    "overview": "Overview",
+    "Overview": "Overview",
     "Income": "Income",
     "Expense": "Expense",
     "Sponsor": "Sponsor",
-    "activities": "Activities"
+    "Activities": "Activities",
+    "Group": "Group",
+    "Option": "Option"
 }
