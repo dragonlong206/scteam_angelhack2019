@@ -1,37 +1,43 @@
 import React, { PureComponent } from 'react';
-import { List, ListItem } from "react-native-elements";
-import { FlatList } from "react-native";
+import { List, ListItem } from 'react-native-elements';
+import { FlatList } from 'react-native';
 
-export default class Group extends PureComponent {  
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: [{
-                id: "1",
-                name: "Nhà trọ",
-                description: "Bạn với Minh, Thanh, Mỹ",
-                picture: {
-                    thumbnail: ""
-                }
-            }]
+export default class Group extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [
+        {
+          id: '1',
+          name: 'Nhà trọ',
+          description: 'Bạn với Minh, Thanh, Mỹ',
+          picture: {
+            thumbnail: ''
+          }
         }
+      ]
     };
+  }
 
-    render() {
-        return (
-            <FlatList
-                data={this.state.data}
-                renderItem={({ item }) => (
-                    <ListItem                  
-                        leftAvatar={{
-                            title: 'MD',
-                            rounded: true,
-                            containerStyle: { margin: 5 },
-                            onPress: () => alert('hey'),
-                        }}
-                    />
-                )}
-            />
-        );
-    }
+  render() {
+    return (
+      <FlatList
+        data={this.state.data}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <ListItem
+            leftAvatar={{
+              title: 'MD',
+              rounded: true,
+              containerStyle: { margin: 5 },
+              onPress: () => alert('hey')
+            }}
+            title={item.name}
+            subtitle={item.description}
+            rightIcon={{ name: 'navigate-next', type: 'material-icon' }}
+          />
+        )}
+      />
+    );
+  }
 }
