@@ -5,6 +5,8 @@
 import { AppRegistry } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import Storage from 'react-native-storage';
+import SQLite from './src/modules/index';
+
 import App from './App';
 import { name as appName } from './app.json';
 
@@ -33,5 +35,6 @@ const storage = new Storage({
 });
 
 global.storage = storage;
+global.SQLite = SQLite;
 
 AppRegistry.registerComponent(appName, () => App);

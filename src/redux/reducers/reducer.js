@@ -1,5 +1,5 @@
 import Imutable from 'immutable';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 const initalSate = Imutable.Map({});
 
