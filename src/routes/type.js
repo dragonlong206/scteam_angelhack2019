@@ -9,3 +9,4 @@ export const PROFILE = 'PROFILE';
 export const ADDEVERYTHING = 'ADD EVERYTHING';
 export const GROUP = 'GROUP';
 export const OPTIONS = 'OPTIONS';
+export const DETAIL = "DETAIL";

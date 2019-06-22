@@ -6,13 +6,14 @@
  */
 
 import { createStackNavigator } from 'react-navigation';
-import { ROOT, PAGE } from './type';
+import { ROOT, DETAIL } from './type';
 import tabNavigationBottom from './main';
-import Page from '../views/home/screen';
+
+import DetailScreen from "../views/home/detail";
 
 const StacksOverTabs = {
-  [PAGE]: {
-    screen: Page
+  [DETAIL]: {
+    screen: DetailScreen
   }
 };
 

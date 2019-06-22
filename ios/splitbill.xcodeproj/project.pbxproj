@@ -485,6 +485,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0226212DC0694660B873E01C /* libRNVectorIcons.a in Frameworks */,
 				59E1D71222BE3E3F00B93E3D /* libsqlite3.0.tbd in Frameworks */,
 				59E1D6CA22BE3B8100B93E3D /* libRNCAsyncStorage.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
@@ -501,7 +502,6 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				14BFB1A71F2F4990B573D7E6 /* libRNGestureHandler.a in Frameworks */,
-				0226212DC0694660B873E01C /* libRNVectorIcons.a in Frameworks */,
 				3B165BC2C6AB4E6F800CE8BB /* libRNI18n.a in Frameworks */,
 				797EE461D3ED42D4A7DCBA17 /* libRealmReact.a in Frameworks */,
 				D67E9A8ADBFC49B58722F146 /* libc++.tbd in Frameworks */,
@@ -1607,6 +1607,10 @@
 				);
 				INFOPLIST_FILE = splitbill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1634,6 +1638,10 @@
 				);
 				INFOPLIST_FILE = splitbill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

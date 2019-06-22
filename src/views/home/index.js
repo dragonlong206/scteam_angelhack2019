@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Text, View, TouchableOpacity, ListView, StyleSheet, FlatList, Image } from 'react-native';
 import { List, ListItem } from "react-native-elements";
-import { StackNavigator } from 'react-navigation';
-import { PAGE, MODAL } from '../../routes/type';
 import i18n from "../../lang/index";
 import { Input, Icon } from "react-native-elements";
+import {DETAIL} from "../../routes/type"
 
 export default class Home extends PureComponent {
   constructor(props) {
@@ -59,7 +58,7 @@ export default class Home extends PureComponent {
               data={this.state.data}
               keyExtractor={item => item.id}
               renderItem={({item}) => (
-                <View style={styles.container}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate(DETAIL)} style={styles.container}>
                   <View style={[styles.avatar]}>
                     <Image source={{uri: 'https://png.pngtree.com/svg/20161206/06e260d19d.png'}} style={{width: 50, height: 50}} />
                   </View>
@@ -71,20 +70,20 @@ export default class Home extends PureComponent {
                       item.totalAmount > 0 ? 
                         <Input
                           label={i18n.t("debting")}
-                          style={{ color: 'red' }}    
+                          style={{ color: "red" }}
                           value={item.totalAmount + "K"}
                           editable={false}
                         />
                       : <Input
                           label={i18n.t("debted")}
-                          style={{ color: 'green' }}    
+                          style={{ color: "green" }}
                           value={item.totalAmount + "K"}
                           editable={false}
                         />
                    }
                     {/* <Text>{item.totalAmount} K</Text> */}
                   </View>
-                </View>
+                </TouchableOpacity>
               )}
             />
         </View>
