@@ -1,73 +1,174 @@
-[{
-	"id": 1,
-	"name": "Ăn nhẹ cuối tuần",
-	"icon": "https://i.pravatar.cc/100?img=16",
-	"date": "2019-06-22",
-	"amount": 4750000,
-	"yourAmount": -500000,
-	"repeatedType": 0,
-	"participants": {
-		"groups": [{
-			"id": 2,
-			"name": "Ăn kiêng",
-			"icon": "https://i.pravatar.cc/100?img=11"
-		}],
-		"individuals": [{
-			"name": "Ms. Mi Nhon",
-			"icon": "https://i.pravatar.cc/100?img=17"
-		}]
+[
+	{
+		"date": "Tháng 06",
+		"data": [
+			{
+				"id": 1,
+				"name": "Ăn nhẹ cuối tuần",
+				"icon": "https://i.pravatar.cc/100?img=16",
+				"date": "2019-06-22",
+				"amount": 4750000,
+				"yourAmount": -500000,
+				"repeatedType": 0,
+				"participants": {
+					"groups": [
+						{
+							"id": 2,
+							"name": "Ăn kiêng",
+							"icon": "https://i.pravatar.cc/100?img=11"
+						}
+					],
+					"individuals": [
+						{
+							"name": "Ms. Mi Nhon",
+							"icon": "https://i.pravatar.cc/100?img=17"
+						}
+					]
+				}
+			},
+			{
+				"id": 2,
+				"name": "Tiền nhà tháng 5",
+				"icon": "https://i.pravatar.cc/100?img=18",
+				"date": "2019-06-15",
+				"amount": 295000,
+				"yourAmount": 95000,
+				"repeatedType": 2,
+				"participants": {
+					"groups": [
+						{
+							"id": 3,
+							"name": "Đời sinh viên",
+							"icon": "https://i.pravatar.cc/100?img=10"
+						}
+					],
+					"individuals": []
+				}
+			},
+			{
+				"id": 3,
+				"name": "Du lịch Vũng Tàu",
+				"icon": "https://i.pravatar.cc/100?img=19",
+				"date": "2019-06-15",
+				"amount": 8600000,
+				"yourAmount": 4230000,
+				"repeatedType": 0,
+				"participants": {
+					"groups": [],
+					"individuals": [
+						{
+							"id": 2,
+							"name": "Mỹ",
+							"avatar": "https://i.pravatar.cc/100?img=2",
+							"phoneNumber": "0388888888"
+						},
+						{
+							"id": 3,
+							"name": "Thanh",
+							"avatar": "https://i.pravatar.cc/100?img=3",
+							"phoneNumber": "0111222344"
+						},
+						{
+							"id": 4,
+							"name": "Minh",
+							"avatar": "https://i.pravatar.cc/100?img=4",
+							"phoneNumber": "1900555444"
+						},
+						{
+							"id": 5,
+							"name": "Ngọc Thanh",
+							"avatar": "https://i.pravatar.cc/100?img=5",
+							"phoneNumber": "0233333555"
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"date": "Tháng 05",
+		"data": [
+			{
+				"id": 1,
+				"name": "Ăn nhẹ cuối tuần",
+				"icon": "https://i.pravatar.cc/100?img=16",
+				"date": "2019-06-22",
+				"amount": 4750000,
+				"yourAmount": -500000,
+				"repeatedType": 0,
+				"participants": {
+					"groups": [
+						{
+							"id": 2,
+							"name": "Ăn kiêng",
+							"icon": "https://i.pravatar.cc/100?img=11"
+						}
+					],
+					"individuals": [
+						{
+							"name": "Ms. Mi Nhon",
+							"icon": "https://i.pravatar.cc/100?img=17"
+						}
+					]
+				}
+			},
+			{
+				"id": 2,
+				"name": "Tiền nhà tháng 5",
+				"icon": "https://i.pravatar.cc/100?img=18",
+				"date": "2019-06-15",
+				"amount": 295000,
+				"yourAmount": 95000,
+				"repeatedType": 2,
+				"participants": {
+					"groups": [
+						{
+							"id": 3,
+							"name": "Đời sinh viên",
+							"icon": "https://i.pravatar.cc/100?img=10"
+						}
+					],
+					"individuals": []
+				}
+			},
+			{
+				"id": 3,
+				"name": "Du lịch Vũng Tàu",
+				"icon": "https://i.pravatar.cc/100?img=19",
+				"date": "2019-06-15",
+				"amount": 8600000,
+				"yourAmount": 4230000,
+				"repeatedType": 0,
+				"participants": {
+					"groups": [],
+					"individuals": [
+						{
+							"id": 2,
+							"name": "Mỹ",
+							"avatar": "https://i.pravatar.cc/100?img=2",
+							"phoneNumber": "0388888888"
+						},
+						{
+							"id": 3,
+							"name": "Thanh",
+							"avatar": "https://i.pravatar.cc/100?img=3",
+							"phoneNumber": "0111222344"
+						},
+						{
+							"id": 4,
+							"name": "Minh",
+							"avatar": "https://i.pravatar.cc/100?img=4",
+							"phoneNumber": "1900555444"
+						},
+						{
+							"id": 5,
+							"name": "Ngọc Thanh",
+							"avatar": "https://i.pravatar.cc/100?img=5",
+							"phoneNumber": "0233333555"
+						}
+					]
+				}
+			}
+		]
 	}
-},
-{
-	"id": 2,
-	"name": "Tiền nhà tháng 5",
-	"icon": "https://i.pravatar.cc/100?img=18",
-	"date": "2019-06-15",
-	"amount": 295000,
-	"yourAmount": 95000,
-	"repeatedType": 2,
-	"participants": {
-		"groups": [{
-			"id": 3,
-			"name": "Đời sinh viên",
-			"icon": "https://i.pravatar.cc/100?img=10"
-		}],
-		"individuals": []
-	}
-},
-{
-	"id": 3,
-	"name": "Du lịch Vũng Tàu",
-	"icon": "https://i.pravatar.cc/100?img=19",
-	"date": "2019-06-15",
-	"amount": 8600000,
-	"yourAmount": 4230000,
-	"repeatedType": 0,
-	"participants": {
-		"groups": [],
-		"individuals": [{
-			"id": 2,
-			"name": "Mỹ",
-			"avatar": "https://i.pravatar.cc/100?img=2",
-			"phoneNumber": "0388888888"
-		},
-		{
-			"id": 3,
-			"name": "Thanh",
-			"avatar": "https://i.pravatar.cc/100?img=3",
-			"phoneNumber": "0111222344"
-		},
-		{
-			"id": 4,
-			"name": "Minh",
-			"avatar": "https://i.pravatar.cc/100?img=4",
-			"phoneNumber": "1900555444"
-		},
-		{
-			"id": 5,
-			"name": "Ngọc Thanh",
-			"avatar": "https://i.pravatar.cc/100?img=5",
-			"phoneNumber": "0233333555"
-		}]
-	}
-}]
+]

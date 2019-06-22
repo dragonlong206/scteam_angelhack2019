@@ -1,15 +1,10 @@
 import React, { PureComponent } from 'react';
-import { List, ListItem } from 'react-native-elements';
+import { ListItem } from 'react-native-elements';
 import { FlatList } from 'react-native';
 import { ItemSeparator } from '../../components/itemSeparator';
 import groups from '../../../data/groups.json';
 import _ from 'lodash';
-import {
-  colorGray,
-  fontSizeCaption,
-  fontSizeNote,
-  fontSizeIcon
-} from '../../styles/_variables';
+import { colorGray, fontSizeNote, fontSizeIcon } from '../../styles/_variables';
 
 export default class Group extends PureComponent {
   constructor(props) {

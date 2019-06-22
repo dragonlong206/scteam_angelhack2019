@@ -2,7 +2,7 @@
  * @Author: Haz
  * @Date: 2019-05-23 10:51:29
  * @Last Modified by: Haz
- * @Last Modified time: 2019-06-22 23:35:54
+ * @Last Modified time: 2019-06-23 01:10:59
  */
 import React from 'react';
 import { Icon } from 'react-native-elements';
@@ -12,11 +12,12 @@ import { View, TouchableOpacity, Text } from 'react-native';
 import i18n from '../lang/index';
 import HomeScreen from '../views/home';
 import ProfileScreen from '../views/profile';
+import ActivityScreen from '../views/activity';
 import GroupScreen from '../views/group';
 import AddEverything from '../components/addEverything';
 import themeStyle from '../styles/index';
 
-import { HOME, PROFILE, ADDEVERYTHING, GROUP, OPTIONS } from './type';
+import { HOME, PROFILE, ADDEVERYTHING, GROUP, OPTIONS, ACTIVITY } from './type';
 import {
   heightFotter,
   primaryColor,
@@ -47,8 +48,8 @@ const tabNavigationBottom = createBottomTabNavigator(
         };
       }
     },
-    [PROFILE]: {
-      screen: ProfileScreen,
+    [ACTIVITY]: {
+      screen: ActivityScreen,
       navigationOptions: ({ navigation }) => {
         return {
           tabBarIcon: ({ tintColor }) => (
@@ -144,6 +145,9 @@ tabNavigationBottom.navigationOptions = ({ navigation }) => {
   switch (routeName) {
     case OPTIONS:
       title = 'Cá nhân';
+      break;
+    case ACTIVITY:
+      title = 'Hoạt động';
       break;
     case GROUP:
       title = i18n.t('group');

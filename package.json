@@ -15,6 +15,7 @@
     "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
+    "numeral": "^2.0.6",
     "react": "16.8.3",
     "react-native": "0.59.9",
     "react-native-datepicker": "^1.7.2",
