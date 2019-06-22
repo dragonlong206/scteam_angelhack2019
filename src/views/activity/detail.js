@@ -1,9 +1,29 @@
 import React, { PureComponent } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import activityDetail from '../../../data/activity_details.json';
+import { Avatar, Input, Icon, Button } from 'react-native-elements';
 import { ButtonGroup } from 'react-native-elements';
 import { fontSizeCaption } from '../../styles/_variables.js';
 
+const styles = StyleSheet.create({
+  info: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    paddingTop: 10,
+    paddingBottom: 10
+  },
+  itemLeft: {
+    flex: 2,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  itemRight: {
+    flex: 5
+  }
+});
 export default class ActivityDetail extends PureComponent {
   constructor(props) {
     super(props);
@@ -15,7 +35,8 @@ export default class ActivityDetail extends PureComponent {
 
     this.state = {
       detail,
-      selectedIndex: 0
+      selectedIndex: 0,
+      name: props.navigation.state.params.title
     };
   }
 
@@ -28,7 +49,15 @@ export default class ActivityDetail extends PureComponent {
     return (
       <View>
         <View>
-          
+        <View style={styles.info}>
+          <View style={styles.itemLeft}>
+            <Avatar size="medium" rounded icon={{ name: 'image' }} />
+          </View>
+          <View style={styles.itemRight}>
+            <Text style={{fontSize: 20}}>{this.state.name}</Text>
+            <Text>Lặp lại hàng tháng</Text>
+          </View>
+        </View>
         </View>
         <View>
           <ButtonGroup
