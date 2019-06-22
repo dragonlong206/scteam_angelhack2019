@@ -2,6 +2,9 @@
 	"id": 1,
 	"name": "Ăn nhẹ cuối tuần",
 	"icon": "https://i.pravatar.cc/100?img=16",
+	"date": "2019-06-22",
+	"amount": 4750000,
+	"yourAmount": -500000,
 	"repeatedType": 0,
 	"participants": {
 		"groups": [{
@@ -19,6 +22,9 @@
 	"id": 2,
 	"name": "Tiền nhà tháng 5",
 	"icon": "https://i.pravatar.cc/100?img=18",
+	"date": "2019-06-15",
+	"amount": 295000,
+	"yourAmount": 95000,
 	"repeatedType": 2,
 	"participants": {
 		"groups": [{
@@ -33,6 +39,9 @@
 	"id": 3,
 	"name": "Du lịch Vũng Tàu",
 	"icon": "https://i.pravatar.cc/100?img=19",
+	"date": "2019-06-15",
+	"amount": 8600000,
+	"yourAmount": 4230000,
 	"repeatedType": 0,
 	"participants": {
 		"groups": [],
