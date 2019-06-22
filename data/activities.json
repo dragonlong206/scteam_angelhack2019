@@ -24,7 +24,8 @@
 							"icon": "https://i.pravatar.cc/100?img=17"
 						}
 					]
-				}
+				},
+				"isSettled": false
 			},
 			{
 				"id": 2,
@@ -43,7 +44,8 @@
 						}
 					],
 					"individuals": []
-				}
+				},
+				"isSettled": true
 			},
 			{
 				"id": 3,
@@ -81,7 +83,8 @@
 							"phoneNumber": "0233333555"
 						}
 					]
-				}
+				},
+				"isSettled": false
 			}
 		]
 	},
@@ -110,7 +113,8 @@
 							"icon": "https://i.pravatar.cc/100?img=17"
 						}
 					]
-				}
+				},
+				"isSettled": false
 			},
 			{
 				"id": 2,
@@ -129,7 +133,8 @@
 						}
 					],
 					"individuals": []
-				}
+				},
+				"isSettled": true
 			},
 			{
 				"id": 3,
@@ -167,7 +172,8 @@
 							"phoneNumber": "0233333555"
 						}
 					]
-				}
+				},
+				"isSettled": true
 			}
 		]
 	}
