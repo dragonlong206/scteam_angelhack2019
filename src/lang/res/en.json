@@ -1,4 +1,7 @@
 {
-    "overview": "Overview",
+  "overview": "Overview",
+  "Income": "Income",
+  "Expense": "Expense",
+  "Sponsor": "Sponsor"
     "activities": "Activities"
 }
