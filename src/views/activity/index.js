@@ -14,6 +14,7 @@ import {
   colorRed
 } from '../../styles/_variables.js';
 import { ItemSeparator } from '../../components/itemSeparator.js';
+import { ACTIVITY_DETAIL } from '../../routes/type.js';
 
 class Activity extends PureComponent {
   constructor(props) {
@@ -68,6 +69,12 @@ class Activity extends PureComponent {
               source: { uri: item.icon },
               size: 'large'
             }}
+            onPress={() =>
+              this.props.navigation.navigate(ACTIVITY_DETAIL, {
+                title: item.name,
+                detail: item
+              })
+            }
             title={item.name}
             subtitle={
               <View>

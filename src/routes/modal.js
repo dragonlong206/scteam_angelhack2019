@@ -2,7 +2,7 @@
  * @Author: Haz
  * @Date: 2019-05-23 11:01:27
  * @Last Modified by: Haz
- * @Last Modified time: 2019-05-30 10:44:39
+ * @Last Modified time: 2019-06-23 01:53:30
  */
 import { createStackNavigator } from 'react-navigation';
 import { Animated, Easing } from 'react-native';

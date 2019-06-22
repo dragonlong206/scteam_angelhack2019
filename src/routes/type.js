@@ -11,3 +11,4 @@ export const GROUP = 'GROUP';
 export const OPTIONS = 'OPTIONS';
 export const ACTIVITY = 'ACTIVITY';
 export const DETAIL = 'DETAIL';
+export const ACTIVITY_DETAIL = 'ACTIVITY_DETAIL';
