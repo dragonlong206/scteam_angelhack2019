@@ -12,6 +12,7 @@ import { View } from 'react-native';
 import i18n from '../lang/index';
 import HomeScreen from '../views/home';
 import ProfileScreen from '../views/profile';
+import GroupScreen from '../views/group';
 import AddEverything from '../components/addEverything';
 import themeStyle from '../styles/index';
 
@@ -56,7 +57,7 @@ const tabNavigationBottom = createBottomTabNavigator(
               color={tintColor}
             />
           ),
-          tabBarLabel: i18n.t('Activities')
+          tabBarLabel: i18n.t('activities')
         };
       }
     },
@@ -83,7 +84,7 @@ const tabNavigationBottom = createBottomTabNavigator(
       }
     },
     [GROUP]: {
-      screen: ProfileScreen,
+      screen: GroupScreen,
       navigationOptions: ({ navigation }) => {
         return {
           tabBarIcon: ({ tintColor }) => (
@@ -94,7 +95,7 @@ const tabNavigationBottom = createBottomTabNavigator(
               color={tintColor}
             />
           ),
-          tabBarLabel: i18n.t('Group')
+          tabBarLabel: i18n.t('group')
         };
       }
     },
@@ -110,7 +111,7 @@ const tabNavigationBottom = createBottomTabNavigator(
               color={tintColor}
             />
           ),
-          tabBarLabel: i18n.t('Option')
+          tabBarLabel: i18n.t('option')
         };
       }
     }

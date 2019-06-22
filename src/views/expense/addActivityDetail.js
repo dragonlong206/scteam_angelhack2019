@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { View, Text } from "react-native";
 import { ButtonGroup } from "react-native-elements";
-import AddExpense from "./addExpense";
+import AddExpense from "./addExpense";
 import AddIncome from "./addIncome";
 import i18n from "../../lang/index";
 

@@ -1,9 +1,11 @@
 {
-  "overview": "Overview",
-  "income": "Income",
-  "expense": "Expense",
-  "sponsor": "Sponsor",
-  "activities": "Activities",
-  "money_placeholder": "Please enter money",
-  "money_label": "Money"
+  "overview": "Tổng quan",
+  "income": "Chi",
+  "expense": "Thu",
+  "sponsor": "Tài trợ",
+  "activities": "Hoạt động động",
+  "money_placeholder": "Vui lòng nhập tền",
+  "money_label": "Tiền",
+  "group":"Nhóm",
+  "option":"Thêm"
 }

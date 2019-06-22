@@ -12,7 +12,32 @@ export default class AddIncome extends PureComponent {
   render() {
     return (
       <View>
-        <Input placeholder={i18n.t('money_placeholder')}  label={i18n.t('money_label')}/>
+        <View>
+          <Input
+            placeholder={i18n.t("money_placeholder")}
+            label={i18n.t("money_label")}
+            keyboardType="numeric"
+          />
+        </View>
+        <View>
+          <Input
+            placeholder={i18n.t("money_placeholder")}
+            label={i18n.t("money_label")}
+            keyboardType="numeric"
+          />
+        </View>
+        <View>
+          <Input
+            placeholder={i18n.t("money_placeholder")}
+            label={i18n.t("money_label")}
+          />
+        </View>
+        <View>
+          <Input
+            placeholder={i18n.t("money_placeholder")}
+            label={i18n.t("money_label")}
+          />
+        </View>
       </View>
     );
   }
