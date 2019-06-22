@@ -2,7 +2,7 @@
  * @Author: Haz
  * @Date: 2019-05-23 10:51:29
  * @Last Modified by: Haz
- * @Last Modified time: 2019-06-22 14:57:42
+ * @Last Modified time: 2019-06-22 15:25:10
  */
 import React from 'react';
 import { Icon } from 'react-native-elements';
@@ -22,7 +22,8 @@ import {
   secondary1Color,
   fontSizeHeadline,
   colorGreen,
-  colorWhite
+  colorWhite,
+  fontSizeIcon
 } from '../styles/_variables';
 
 const tabNavigationBottom = createBottomTabNavigator(
@@ -31,7 +32,14 @@ const tabNavigationBottom = createBottomTabNavigator(
       screen: HomeScreen,
       navigationOptions: ({ navigation }) => {
         return {
-          tabBarIcon: ({ tintColor }) => <Icon name="home" color={tintColor} />,
+          tabBarIcon: ({ tintColor }) => (
+            <Icon
+              type="font-awesome"
+              size={fontSizeIcon}
+              name="home"
+              color={tintColor}
+            />
+          ),
           tabBarLabel: i18n.t('Overview')
         };
       }
@@ -41,7 +49,12 @@ const tabNavigationBottom = createBottomTabNavigator(
       navigationOptions: ({ navigation }) => {
         return {
           tabBarIcon: ({ tintColor }) => (
-            <Icon type="feather" name="activity" color={tintColor} />
+            <Icon
+              size={fontSizeIcon}
+              type="font-awesome"
+              name="bar-chart"
+              color={tintColor}
+            />
           ),
           tabBarLabel: i18n.t('Activities')
         };
@@ -63,7 +76,7 @@ const tabNavigationBottom = createBottomTabNavigator(
                 }
               ]}
             >
-              <Icon name="add" color={colorWhite} />
+              <Icon size={fontSizeIcon} name="add" color={colorWhite} />
             </View>
           )
         };
@@ -74,7 +87,12 @@ const tabNavigationBottom = createBottomTabNavigator(
       navigationOptions: ({ navigation }) => {
         return {
           tabBarIcon: ({ tintColor }) => (
-            <Icon type="font-awesome" name="group" color={tintColor} />
+            <Icon
+              size={fontSizeIcon}
+              type="font-awesome"
+              name="group"
+              color={tintColor}
+            />
           ),
           tabBarLabel: i18n.t('Group')
         };
@@ -85,7 +103,12 @@ const tabNavigationBottom = createBottomTabNavigator(
       navigationOptions: ({ navigation }) => {
         return {
           tabBarIcon: ({ tintColor }) => (
-            <Icon type="simple-line-icon" name="options" color={tintColor} />
+            <Icon
+              size={fontSizeIcon}
+              type="simple-line-icon"
+              name="options"
+              color={tintColor}
+            />
           ),
           tabBarLabel: i18n.t('Option')
         };
