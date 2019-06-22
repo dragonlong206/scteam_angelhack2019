@@ -222,14 +222,14 @@
 	"id": 6,
 	"activityId": 2,
 	"detailType": 1,
-	"amount": 1500000,
-	"description": "Tiền nhà",
-	"date": "2019-05-30 19:04:00",
+	"amount": 350000,
+	"description": "Tiền Internet",
+	"date": "2019-05-26 19:04:00",
 	"user": {
-		"id": 9,
-		"name": "Tí",
-		"avatar": "https://i.pravatar.cc/100?img=13",
-		"phoneNumber": "0999999999"
+		"id": 11,
+		"name": "Kẹo",
+		"avatar": "https://i.pravatar.cc/100?img=15",
+		"phoneNumber": "0995857575"
 	},
 	"sharingType": 1,
 	"location": null,
@@ -266,6 +266,62 @@
 	{
 		"sharingType": 1,
 		"amount": "1/4",
+		"user": {
+			"id": 12,
+			"name": "Kéo",
+			"avatar": "https://i.pravatar.cc/100?img=12",
+			"phoneNumber": "07857676768"
+		}
+	}]
+},
+{
+	"id": 7,
+	"activityId": 2,
+	"detailType": 1,
+	"amount": 1200000,
+	"description": "Tiền điện",
+	"date": "2019-05-30 09:15:00",
+	"user": {
+		"id": 11,
+		"name": "Kẹo",
+		"avatar": "https://i.pravatar.cc/100?img=15",
+		"phoneNumber": "0995857575"
+	},
+	"sharingType": 2,
+	"location": null,
+	"expenseSharing": [{
+		"sharingType": 1,
+		"amount": "2/5",
+		"user": {
+			"id": 9,
+			"name": "Tí",
+			"avatar": "https://i.pravatar.cc/100?img=13",
+			"phoneNumber": "0999999999"
+		}
+	},
+	{
+		"sharingType": 1,
+		"amount": "1/5",
+		"user": {
+			"id": 10,
+			"name": "Tèo",
+			"avatar": "https://i.pravatar.cc/100?img=14",
+			"phoneNumber": "0388888888"
+		}
+	},
+	{
+		"sharingType": 1,
+		"amount": "1/5",
+		"user": {
+			"id": 11,
+			"name": "Kẹo",
+			"avatar": "https://i.pravatar.cc/100?img=15",
+			"phoneNumber": "0995857575"
+		}
+	},
+	{
+		"sharingType": 1,
+		"amount": "1/5",
 		"user": {
 			"id": 12,
 			"name": "Kéo",
