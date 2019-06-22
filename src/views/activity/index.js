@@ -72,7 +72,7 @@ class Activity extends PureComponent {
             onPress={() =>
               this.props.navigation.navigate(ACTIVITY_DETAIL, {
                 title: item.name,
-                detail: item
+                id: item.id
               })
             }
             title={item.name}
