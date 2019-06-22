@@ -2,30 +2,28 @@
  * @Author: Haz
  * @Date: 2019-05-23 10:51:29
  * @Last Modified by: Haz
- * @Last Modified time: 2019-06-22 14:25:57
+ * @Last Modified time: 2019-06-22 14:50:35
  */
 import React from 'react';
-import { Icon } from "react-native-elements";
+import { Icon } from 'react-native-elements';
+import { createBottomTabNavigator } from 'react-navigation';
+import { View } from 'react-native';
 
 import i18n from '../lang/index';
-import HomeScreen from "../views/home";
-import ProfileScreen from "../views/profile";
-import AddEverything from "../components/addEverything";
-import themeStyle from "../styles/index";
+import HomeScreen from '../views/home';
+import ProfileScreen from '../views/profile';
+import AddEverything from '../components/addEverything';
+import themeStyle from '../styles/index';
 
-import { HOME, PROFILE, ADDEVERYTHING } from "./type";
+import { HOME, PROFILE, ADDEVERYTHING, GROUP, OPTIONS } from './type';
 import {
   heightFotter,
-  secondary2Color,
   primaryColor,
   secondary1Color,
-  colorWhite,
   fontSizeHeadline,
-  colorBlue,
   colorGreen,
-  colorBlack,
-  backgroundScreen
-} from "../styles/_variables";
+  colorWhite
+} from '../styles/_variables';
 
 const tabNavigationBottom = createBottomTabNavigator(
   {
@@ -40,37 +38,63 @@ const tabNavigationBottom = createBottomTabNavigator(
     },
     [PROFILE]: {
       screen: ProfileScreen,
-      path: "profile"
+      navigationOptions: ({ navigation }) => {
+        return {
+          tabBarIcon: ({ tintColor }) => (
+            <Icon type="feather" name="activity" color={tintColor} />
+          ),
+          tabBarLabel: i18n.t('activities')
+        };
+      }
     },
     [ADDEVERYTHING]: {
       screen: AddEverything,
-      //path: "AddEverything",
       navigationOptions: ({ navigation }) => {
         return {
-          // tabBarIcon: ({ tintColor }) => (
-          //   <View
-          //     style={[
-          //       themeStyle.ButtonAddButtomNavigation,
-          //       themeStyle.BoxShadow,
-          //       {
-          //         backgroundColor:
-          //           tintColor === primaryColor ? primaryColor : colorGreen
-          //       }
-          //     ]}
-          //   >
-          //     <View>
-               
-          //     </View>
-          //   </View>
-          // ),
-          tabBarLabel: "Add"
+          tabBarLabel: ' ',
+          tabBarIcon: ({ tintColor }) => (
+            <View
+              style={[
+                themeStyle.ButtonAddButtomNavigation,
+                themeStyle.BoxShadow,
+                {
+                  backgroundColor:
+                    tintColor === primaryColor ? primaryColor : colorGreen
+                }
+              ]}
+            >
+              <Icon name="add" color={colorWhite} />
+            </View>
+          )
+        };
+      }
+    },
+    [GROUP]: {
+      screen: ProfileScreen,
+      navigationOptions: ({ navigation }) => {
+        return {
+          tabBarIcon: ({ tintColor }) => (
+            <Icon type="feather" name="activity" color={tintColor} />
+          ),
+          tabBarLabel: i18n.t('activities')
+        };
+      }
+    },
+    [OPTIONS]: {
+      screen: ProfileScreen,
+      navigationOptions: ({ navigation }) => {
+        return {
+          tabBarIcon: ({ tintColor }) => (
+            <Icon type="feather" name="activity" color={tintColor} />
+          ),
+          tabBarLabel: i18n.t('activities')
         };
       }
     }
   },
   {
     initialRouteName: HOME,
-    tabBarPosition: "bottom",
+    tabBarPosition: 'bottom',
     animationEnabled: true,
     swipeEnabled: false,
     tabBarOptions: {
@@ -93,13 +117,13 @@ tabNavigationBottom.navigationOptions = ({ navigation }) => {
   let title;
   switch (routeName) {
     case PROFILE:
-      title = "Profile";
+      title = 'Profile';
       break;
     case ADDEVERYTHING:
-      title = "Add";
+      title = 'Add';
       break;
     default:
-      title = "Home";
+      title = 'Home';
       break;
   }
   return {
