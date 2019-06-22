@@ -1,15 +1,15 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   splitWrapper: {
-    justifyContent: "space-around",
-    flexDirection: "row",
+    justifyContent: 'space-around',
+    flexDirection: 'row',
     marginLeft: 10,
     marginRight: 10,
     alignItems: "center"
   },
   splitLabel: {
     flex: 1,
-    justifyContent: "flex-start"
+    justifyContent: 'flex-start'
   },
   splitIncomeUserItem: {
     flexDirection: "row",

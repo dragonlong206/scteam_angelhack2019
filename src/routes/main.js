@@ -2,7 +2,7 @@
  * @Author: Haz
  * @Date: 2019-05-23 10:51:29
  * @Last Modified by: Haz
- * @Last Modified time: 2019-06-22 20:28:58
+ * @Last Modified time: 2019-06-22 23:35:54
  */
 import React from 'react';
 import { Icon } from 'react-native-elements';
@@ -24,7 +24,8 @@ import {
   fontSizeHeadline,
   colorGreen,
   colorWhite,
-  fontSizeIcon
+  fontSizeIcon,
+  fontSizeCaption
 } from '../styles/_variables';
 import TabHeader from '../components/tabHeader';
 
@@ -42,7 +43,7 @@ const tabNavigationBottom = createBottomTabNavigator(
               color={tintColor}
             />
           ),
-          tabBarLabel: i18n.t('Overview')
+          tabBarLabel: i18n.t('overview')
         };
       }
     },
@@ -131,7 +132,7 @@ const tabNavigationBottom = createBottomTabNavigator(
         height: heightFotter
       },
       labelStyle: {
-        fontSize: fontSizeHeadline
+        fontSize: fontSizeCaption
       }
     }
   }
@@ -141,8 +142,8 @@ tabNavigationBottom.navigationOptions = ({ navigation }) => {
   let { routeName } = navigation.state.routes[navigation.state.index];
   let title;
   switch (routeName) {
-    case PROFILE:
-      title = 'Profile';
+    case OPTIONS:
+      title = 'Cá nhân';
       break;
     case GROUP:
       title = i18n.t('group');
