@@ -2,10 +2,13 @@
  * @Author: Haz
  * @Date: 2019-05-23 10:51:29
  * @Last Modified by: Haz
- * @Last Modified time: 2019-05-30 10:40:54
+ * @Last Modified time: 2019-06-22 14:25:57
  */
-
+import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
+import { Icon } from 'react-native-elements';
+
+import i18n from '../lang/index';
 
 import { HOME, PROFILE } from './type';
 
@@ -15,7 +18,13 @@ import ProfileScreen from '../views/profile';
 const tabNavigationBottom = createBottomTabNavigator(
   {
     [HOME]: {
-      screen: HomeScreen
+      screen: HomeScreen,
+      navigationOptions: ({ navigation }) => {
+        return {
+          tabBarIcon: ({ tintColor }) => <Icon name="home" color={tintColor} />,
+          tabBarLabel: i18n.t('overview')
+        };
+      }
     },
     [PROFILE]: {
       screen: ProfileScreen,
