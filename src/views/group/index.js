@@ -7,7 +7,8 @@ import _ from 'lodash';
 import {
   colorGray,
   fontSizeCaption,
-  fontSizeNote
+  fontSizeNote,
+  fontSizeIcon
 } from '../../styles/_variables';
 
 export default class Group extends PureComponent {
@@ -35,7 +36,7 @@ export default class Group extends PureComponent {
               containerStyle: { margin: 5 },
               onPress: () => alert('hey'),
               source: { uri: item.icon },
-              size: 'medium'
+              size: 'large'
             }}
             title={item.name}
             subtitle={this.renderDescription(item.members)}
@@ -44,7 +45,11 @@ export default class Group extends PureComponent {
               marginTop: 3,
               fontSize: fontSizeNote
             }}
-            rightIcon={{ name: 'navigate-next', type: 'material-icon' }}
+            rightIcon={{
+              name: 'navigate-next',
+              type: 'material-icon',
+              size: fontSizeIcon
+            }}
           />
         )}
       />
