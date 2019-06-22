@@ -1,0 +1,224 @@
+activityDetails: [{
+	id: 1,
+	activityId: 1,
+	detailType: 1,
+	amount: 1450000,
+	description: "Tiền ăn nhẹ",
+	date: "2019-05-04 20:10:00",
+	user: {
+		id: 7,
+		name: "Bợm 3",
+		avatar: "https://i.pravatar.cc/100?img=8",
+		phoneNumber: "0955664434"
+	},
+	sharingType: 1,
+	location: {
+		id: 1,
+		name: "Nhà hàng Siêu Ngon",
+		address: "450 Thoại Ngọc Hầu"
+	},
+	expenseSharing: [{
+		sharingType: 1,
+		amount: "1/4",
+		user: {
+			id: 5,
+			name: "Bợm 1",
+			avatar: "https://i.pravatar.cc/100?img=6",
+			phoneNumber: "0999999999"
+		}
+	},
+	{
+		sharingType: 1,
+		amount: "1/4",
+		user: {
+			id: 6,
+			name: "Bợm 2",
+			avatar: "https://i.pravatar.cc/100?img=7",
+			phoneNumber: "02948558586"
+		}
+	},
+	{
+		sharingType: 1,
+		amount: "1/4",
+		user: {
+			id: 7,
+			name: "Bợm 3",
+			avatar: "https://i.pravatar.cc/100?img=8",
+			phoneNumber: "0955664434"
+		}
+	},
+	{
+		sharingType: 1,
+		amount: "1/4",
+		user: {
+			id: 8,
+			name: "Bợm 4",
+			avatar: "https://i.pravatar.cc/100?img=9",
+			phoneNumber: "03134445566"
+		}
+	}]
+},
+{
+	id: 2,
+	activityId: 1,
+	detailType: 1,
+	amount: 450000,
+	description: "Karaoke",
+	date: "2019-05-04 21:15:00",
+	user: {
+		id: 7,
+		name: "Bợm 3",
+		avatar: "https://i.pravatar.cc/100?img=8",
+		phoneNumber: "0955664434"
+	},
+	sharingType: 1,
+	location: {
+		id: 2,
+		name: "Karaoke Vũ Trường",
+		address: "25 Sư Vạn Hạnh"
+	},
+	expenseSharing: [{
+		sharingType: 1,
+		amount: "1/4",
+		user: {
+			id: 5,
+			name: "Bợm 1",
+			avatar: "https://i.pravatar.cc/100?img=6",
+			phoneNumber: "0999999999"
+		}
+	},
+	{
+		sharingType: 1,
+		amount: "1/4",
+		user: {
+			id: 6,
+			name: "Bợm 2",
+			avatar: "https://i.pravatar.cc/100?img=7",
+			phoneNumber: "02948558586"
+		}
+	}]
+},
+{
+	id: 3,
+	activityId: 1,
+	detailType: 3,
+	amount: 500000,
+	description: "Sếp thưởng",
+	date: "2019-05-04 21:15:00",
+	user: {
+		id: 7,
+		name: "Bợm 3",
+		avatar: "https://i.pravatar.cc/100?img=8",
+		phoneNumber: "0955664434"
+	}
+},
+{
+	id: 4,
+	activityId: 1,
+	detailType: 1,
+	amount: 450000,
+	description: "Tăng 3",
+	date: "2019-05-04 21:15:00",
+	user: {
+		id: 6,
+		name: "Bợm 2",
+		avatar: "https://i.pravatar.cc/100?img=7",
+		phoneNumber: "02948558586"
+	},
+	sharingType: 2,
+	location: {
+		id: 4,
+		name: "Tiệm X",
+		address: "55 Sư Vạn Hạnh"
+	},
+	expenseSharing: [{
+		sharingType: 2,
+		amount: "200000",
+		user: {
+			id: 5,
+			name: "Bợm 1",
+			avatar: "https://i.pravatar.cc/100?img=6",
+			phoneNumber: "0999999999"
+		}
+	},
+	{
+		sharingType: 1,
+		amount: "1/2",
+		user: {
+			id: 6,
+			name: "Bợm 2",
+			avatar: "https://i.pravatar.cc/100?img=7",
+			phoneNumber: "02948558586"
+		}
+	},
+	{
+		sharingType: 1,
+		amount: "1/2",
+		user: {
+			id: 8,
+			name: "Bợm 4",
+			avatar: "https://i.pravatar.cc/100?img=9",
+			phoneNumber: "03134445566"
+		}
+	}]
+},
+{
+	id: 5,
+	activityId: 2,
+	detailType: 1,
+	amount: 1500000,
+	description: "Tiền nhà",
+	date: "2019-05-30 19:04:00",
+	user: {
+		id: 7,
+		name: "Bợm 3",
+		avatar: "https://i.pravatar.cc/100?img=8",
+		phoneNumber: "0955664434"
+	},
+	sharingType: 1,
+	location: {
+		id: 1,
+		name: "Nhà hàng Siêu Ngon",
+		address: "450 Thoại Ngọc Hầu"
+	},
+	expenseSharing: [{
+		sharingType: 1,
+		amount: "1/4",
+		user: {
+			id: 5,
+			name: "Bợm 1",
+			avatar: "https://i.pravatar.cc/100?img=6",
+			phoneNumber: "0999999999"
+		}
+	},
+	{
+		sharingType: 1,
+		amount: "1/4",
+		user: {
+			id: 6,
+			name: "Bợm 2",
+			avatar: "https://i.pravatar.cc/100?img=7",
+			phoneNumber: "02948558586"
+		}
+	},
+	{
+		sharingType: 1,
+		amount: "1/4",
+		user: {
+			id: 7,
+			name: "Bợm 3",
+			avatar: "https://i.pravatar.cc/100?img=8",
+			phoneNumber: "0955664434"
+		}
+	},
+	{
+		sharingType: 1,
+		amount: "1/4",
+		user: {
+			id: 8,
+			name: "Bợm 4",
+			avatar: "https://i.pravatar.cc/100?img=9",
+			phoneNumber: "03134445566"
+		}
+	}]
+}]

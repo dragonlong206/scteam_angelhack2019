@@ -1,0 +1,62 @@
+activities: [{
+	id: 1,
+	name: "Ăn nhẹ cuối tuần",
+	icon: "https://i.pravatar.cc/100?img=16",
+	repeatedType: 0,
+	participants: {
+		groups: [{
+			name: "Ăn kiêng",
+			icon: "https://i.pravatar.cc/100?img=11"
+		}],
+		individuals: [{
+			name: "Ms. Mi Nhon",
+			icon: "https://i.pravatar.cc/100?img=17"
+		}]
+	}
+},
+{
+	id: 2,
+	name: "Tiền nhà tháng 5",
+	icon: "https://i.pravatar.cc/100?img=18",
+	repeatedType: 2,
+	participants: {
+		groups: [{
+			name: "Đời sinh viên",
+			icon: "https://i.pravatar.cc/100?img=10"
+		}],
+		individuals: []
+	}
+},
+{
+	id: 3,
+	name: "Du lịch Vũng Tàu",
+	icon: "https://i.pravatar.cc/100?img=19",
+	repeatedType: 0,
+	participants: {
+		groups: [],
+		individuals: [{
+			id: 2,
+			name: "Mỹ",
+			avatar: "https://i.pravatar.cc/100?img=2",
+			phoneNumber: "0388888888"
+		},
+		{
+			id: 3,
+			name: "Thanh",
+			avatar: "https://i.pravatar.cc/100?img=3",
+			phoneNumber: "0111222344"
+		},
+		{
+			id: 4,
+			name: "Minh",
+			avatar: "https://i.pravatar.cc/100?img=4",
+			phoneNumber: "1900555444"
+		},
+		{
+			id: 5,
+			name: "Ngọc Thanh",
+			avatar: "https://i.pravatar.cc/100?img=5",
+			phoneNumber: "0233333555"
+		}]
+	}
+}];
