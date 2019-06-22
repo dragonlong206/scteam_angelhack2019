@@ -3,51 +3,57 @@ import { Text, View, TouchableOpacity, ListView, StyleSheet, FlatList, Image } f
 import { List, ListItem } from "react-native-elements";
 import i18n from "../../lang/index";
 import { Input, Icon } from "react-native-elements";
-import {DETAIL} from "../../routes/type"
+import { DETAIL } from "../../routes/type";
+import home from '../../../data/home.json';
+import { ItemSeparator } from '../../components/itemSeparator';
+import {
+  colorGray,
+  fontSizeCaption,
+  fontSizeNote,
+  fontSizeIcon,
+  homeContainer
+} from '../../styles/_variables';
 
 export default class Home extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { 
-      value1: "350k",  
-      value2: "750k",
-      data: [
-        {
-          id: "1",
-          username: "Minh Ngô",
-          totalAmount: 250
-        },
-        {
-          id: "2",
-          username: "Thanh Bùi",
-          totalAmount: 750
-        },
-        {
-          id: "3",
-          username: "Mỹ Nguyễn",
-          totalAmount: -500
-        }
-      ]
+      value1: home[0].amount.toString() + 'VND',  
+      value2: home[1].amount.toString() + 'VND',
+      data: home
     };
   }
-  render() {
-    const { value1, value2, data } = this.state;
+
+  renderRightElement = amount => {
     return (
-      <View style={[styles.container]}>
-        <View style={styles.item}>
+      <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end'}}>
+        <View>
+          <Text>{amount}VND</Text>
+        </View>
+        <View>
+          <Icon
+            name='navigate-next'
+            type= 'material-icon'
+          />
+        </View>
+      </View>
+    );
+  }
+
+  render() {
+    const { value1, value2 } = this.state;
+    return (
+      <View style={homeContainer}>
+        <View style={{ width: '50%', alignItems: 'center', fontWeight: 'bold' }}>
           <Input
             label={i18n.t("debting_user")}
-            // keyboardType="numeric"
-            style={styles.item}
             value={value1}
             editable={false}
           />
         </View>
-        <View style={styles.item}>
+        <View style={{ width: '50%', alignItems: 'center', fontWeight: 'bold' }}>
           <Input
             label={i18n.t("debted_user")}
-            // keyboardType="numeric"
-            style={styles.item}    
             value={value2}
             editable={false}
           />
@@ -56,33 +62,27 @@ export default class Home extends PureComponent {
         <View>
           <FlatList
               data={this.state.data}
-              keyExtractor={item => item.id}
+              keyExtractor={item => item.id.toString()}
+              ItemSeparatorComponent={() => <ItemSeparator />}
               renderItem={({item}) => (
-                <TouchableOpacity onPress={() => this.props.navigation.navigate(DETAIL)} style={styles.container}>
-                  <View style={[styles.avatar]}>
-                    <Image source={{uri: 'https://png.pngtree.com/svg/20161206/06e260d19d.png'}} style={{width: 50, height: 50}} />
-                  </View>
-                  <View style={styles.username}>
-                    <Text>{item.username}</Text>
-                  </View>
-                  <View style={styles.total}>
-                    {
-                      item.totalAmount > 0 ? 
-                        <Input
-                          label={i18n.t("debting")}
-                          style={{ color: "red" }}
-                          value={item.totalAmount + "K"}
-                          editable={false}
-                        />
-                      : <Input
-                          label={i18n.t("debted")}
-                          style={{ color: "green" }}
-                          value={item.totalAmount + "K"}
-                          editable={false}
-                        />
-                   }
-                    {/* <Text>{item.totalAmount} K</Text> */}
-                  </View>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate(DETAIL)} style={homeContainer}>
+                  <ListItem
+                    leftAvatar={{
+                      rounded: true,
+                      containerStyle: { margin: 5 },
+                      onPress: () => alert('hey'),
+                      source: { uri: item.avatar },
+                      size: 'large'
+                    }}
+                    title={item.name}
+                    subtitle={item.phoneNumber}
+                    subtitleStyle={{
+                      color: colorGray,
+                      marginTop: 3,
+                      fontSize: fontSizeNote
+                    }}
+                    rightElement={this.renderRightElement(item.amount)}
+                  />
                 </TouchableOpacity>
               )}
             />
@@ -92,44 +92,3 @@ export default class Home extends PureComponent {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'flex-start'
-  },
-  avatar:{
-    height: 100,
-    padding: 10,
-    width: '20%',
-    alignItems: 'center',
-  },
-  username:{
-    height: 100,
-    padding: 10,
-    width: '40%',
-    textAlign: 'left',
-    textAlignVertical: 'center',
-    fontSize: 25,
-    fontWeight: 'bold'
-  },
-  total:{
-    height: 100,
-    padding: 10,
-    width: '40%',
-    fontSize: 25,
-    textAlign: 'right',
-    textAlignVertical: 'center',
-    fontWeight: 'bold'
-  },
-  item :{
-    height: 100,
-    padding: 10,
-    width: '50%',
-    alignItems: 'center',
-    fontSize: 25,
-    fontWeight: 'bold'
-  }
-});

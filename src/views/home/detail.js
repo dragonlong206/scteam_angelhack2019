@@ -7,7 +7,8 @@ import _ from 'lodash';
 import {
   colorGray,
   fontSizeCaption,
-  fontSizeNote
+  fontSizeNote,
+  fontSizeIcon
 } from '../../styles/_variables';
 
 export default class Detail extends PureComponent {

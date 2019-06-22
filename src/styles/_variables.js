@@ -47,3 +47,10 @@ export const centerHorizontalAndVertical = {
   alignSelf: 'center',
   justifyContent: 'center'
 };
+
+// export const homeContainer = {
+//     flex: 1,
+//     flexDirection: 'row',
+//     flexWrap: 'wrap',
+//     alignItems: 'flex-start'
+// };
