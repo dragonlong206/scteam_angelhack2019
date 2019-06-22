@@ -13,7 +13,7 @@ export default class AddActivityDetail extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      selectedIndex: 1
+      selectedIndex: 0
     };
     this.updateIndex = this.updateIndex.bind(this);
   }
@@ -37,6 +37,7 @@ export default class AddActivityDetail extends PureComponent {
           buttons={buttons}
           containerStyle={{ height: 30 }}
         />
+        <View>{selectedIndex == 0 ? <AddIncome /> : <AddExpense />}</View>
       </View>
     );
   }

@@ -1,9 +1,9 @@
 {
-    "Overview": "Overview",
-    "Income": "Income",
-    "Expense": "Expense",
-    "Sponsor": "Sponsor",
-    "Activities": "Activities",
-    "Group": "Group",
-    "Option": "Option"
+  "overview": "Overview",
+  "income": "Income",
+  "expense": "Expense",
+  "sponsor": "Sponsor",
+  "activities": "Activities",
+  "money_placeholder": "Please enter money",
+  "money_label": "Money"
 }
