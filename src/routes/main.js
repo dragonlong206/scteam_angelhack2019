@@ -143,6 +143,9 @@ tabNavigationBottom.navigationOptions = ({ navigation }) => {
     case PROFILE:
       title = 'Profile';
       break;
+    case GROUP:
+      title = i18n.t('group');
+      break;
     case ADDEVERYTHING:
       title = 'Add';
       break;
