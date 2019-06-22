@@ -32,7 +32,7 @@ const tabNavigationBottom = createBottomTabNavigator(
       navigationOptions: ({ navigation }) => {
         return {
           tabBarIcon: ({ tintColor }) => <Icon name="home" color={tintColor} />,
-          tabBarLabel: i18n.t('Overview')
+          tabBarLabel: i18n.t('overview')
         };
       }
     },
@@ -43,7 +43,7 @@ const tabNavigationBottom = createBottomTabNavigator(
           tabBarIcon: ({ tintColor }) => (
             <Icon type="feather" name="activity" color={tintColor} />
           ),
-          tabBarLabel: i18n.t('Activities')
+          tabBarLabel: i18n.t('activities')
         };
       }
     },
@@ -76,7 +76,7 @@ const tabNavigationBottom = createBottomTabNavigator(
           tabBarIcon: ({ tintColor }) => (
             <Icon type="font-awesome" name="group" color={tintColor} />
           ),
-          tabBarLabel: i18n.t('Group')
+          tabBarLabel: i18n.t('group')
         };
       }
     },
@@ -87,7 +87,7 @@ const tabNavigationBottom = createBottomTabNavigator(
           tabBarIcon: ({ tintColor }) => (
             <Icon type="simple-line-icon" name="options" color={tintColor} />
           ),
-          tabBarLabel: i18n.t('Option')
+          tabBarLabel: i18n.t('option')
         };
       }
     }
