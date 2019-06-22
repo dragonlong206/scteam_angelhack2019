@@ -1,8 +1,9 @@
 import React, { PureComponent } from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { ButtonGroup } from "react-native-elements";
 import AddExpense from "./addExpense";
 import AddIncome from "./addIncome";
+import AddSponsor from "./addSponsor";
 import i18n from "../../lang/index";
 
 const income = () => <Text>{i18n.t("income")}</Text>;
@@ -30,14 +31,22 @@ export default class AddActivityDetail extends PureComponent {
     ];
     const { selectedIndex } = this.state;
     return (
-      <View>
+      <View style={{ paddingBottom: 60 }}>
         <ButtonGroup
           onPress={this.updateIndex}
           selectedIndex={selectedIndex}
           buttons={buttons}
           containerStyle={{ height: 30 }}
         />
-        <View>{selectedIndex == 0 ? <AddIncome /> : <AddExpense />}</View>
+        <ScrollView>
+          {selectedIndex == 0 ? (
+            <AddIncome />
+          ) : selectedIndex == 1 ? (
+            <AddExpense />
+          ) : (
+            <AddSponsor />
+          )}
+        </ScrollView>
       </View>
     );
   }

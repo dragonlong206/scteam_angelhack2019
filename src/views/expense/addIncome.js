@@ -1,11 +1,12 @@
 import React, { PureComponent } from "react";
-import { View, Button, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import {
   Input,
   Icon,
   Text,
   ButtonGroup,
-  CheckBox
+  CheckBox,
+  Button
 } from "react-native-elements";
 import i18n from "../../lang/index";
 import MultiSelect from "react-native-multiple-select";
@@ -13,6 +14,9 @@ import style from "../../styles/component";
 import incomeStyle from "../../styles/addIncome";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import moment from "moment";
+import { connect } from "react-redux";
+import _ from "lodash";
+
 const itemActivity = [
   {
     id: "1",
@@ -31,7 +35,7 @@ const itemActivity = [
 const component1 = () => <Text>Chia đều</Text>;
 const component2 = () => <Text>Tuỳ chỉnh</Text>;
 
-export default class AddIncome extends PureComponent {
+class AddIncome extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -105,6 +109,21 @@ export default class AddIncome extends PureComponent {
 
   onPressDateIncome = () => {};
 
+  onChangeSelectUsersplit = user => {
+    let { users } = this.state;
+
+    const _users = _.clone(users);
+
+    console.log(user);
+    let item = _users.findIndex(i => {
+      return i.id === user.id;
+    });
+    _users[item].checked = !_users[item].checked;
+    this.setState({
+      users: _users
+    });
+  };
+
   renderUsersplit = () => {
     const { users } = this.state;
     var result = users.map(item => {
@@ -113,7 +132,8 @@ export default class AddIncome extends PureComponent {
           <View>
             <CheckBox
               checked={item.checked}
-              onPress={() => (item.checked = !item.checked)}
+              onPress={() => this.onChangeSelectUsersplit(item)}
+              containerStyle={incomeStyle.checkBoxSplitContainer}
             />
           </View>
           <View>
@@ -223,7 +243,21 @@ export default class AddIncome extends PureComponent {
             {this.renderUsersplit()}
           </View>
         </View>
+        <View style={style.formItem}>
+          <View style={incomeStyle.buttonActionWrapper}>
+            <Button style={{ marginBottom: 10 }} title="Lưu" />
+            <Button title="Huỷ bỏ" type="outline" />
+          </View>
+        </View>
       </View>
     );
   }
 }
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AddIncome);

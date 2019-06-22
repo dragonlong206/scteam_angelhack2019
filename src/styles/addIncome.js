@@ -5,17 +5,28 @@ export default StyleSheet.create({
     flexDirection: "row",
     marginLeft: 10,
     marginRight: 10,
-    alignItems: 'center',
+    alignItems: "center"
   },
   splitLabel: {
     flex: 1,
     justifyContent: "flex-start"
   },
-  splitIncomeUserItem:{
+  splitIncomeUserItem: {
     flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
   },
-  splitIncomeUserWrapper:{
+  splitIncomeUserWrapper: {
     flexDirection: "column",
+    marginLeft: 10,
+    marginRight: 10
+  },
+  checkBoxSplitContainer: {
+    marginTop: 5,
+    marginBottom: 5,
+    padding: 0
+  },
+  buttonActionWrapper: {
     marginLeft: 10,
     marginRight: 10,
   }
