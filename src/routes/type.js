@@ -6,3 +6,5 @@ export const PROFILE = 'PROFILE';
 
 export const PAGE = 'PAGE';
 export const MODAL = 'MODAL';
+
+export const ADDEVERYTHING= 'ADD EVERYTHING';
