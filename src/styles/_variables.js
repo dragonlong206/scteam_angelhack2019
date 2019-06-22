@@ -48,9 +48,8 @@ export const centerHorizontalAndVertical = {
   justifyContent: 'center'
 };
 
-// export const homeContainer = {
-//     flex: 1,
-//     flexDirection: 'row',
-//     flexWrap: 'wrap',
-//     alignItems: 'flex-start'
-// };
+export const homeContainer = {
+    flex: 1,
+    flexDirection: 'row',
+  
+};
