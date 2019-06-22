@@ -8,5 +8,9 @@
   "money_label": "Tiền",
   "group": "Nhóm",
   "option": "Thêm",
-  "rev_exp": "Thu chi"
+  "rev_exp": "Thu chi",
+  "debting_user": "Bạn đang nợ",
+  "debted_user": "Bạn bị nợ",
+  "debting": "Nợ bạn",
+  "debted": "Bạn nợ"
 }
