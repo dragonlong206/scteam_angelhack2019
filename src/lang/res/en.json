@@ -3,9 +3,10 @@
   "income": "Chi",
   "expense": "Thu",
   "sponsor": "Tài trợ",
-  "activities": "Hoạt động động",
+  "activities": "Hoạt động",
   "money_placeholder": "Vui lòng nhập tền",
   "money_label": "Tiền",
-  "group":"Nhóm",
-  "option":"Thêm"
+  "group": "Nhóm",
+  "option": "Thêm",
+  "rev_exp": "Thu chi"
 }

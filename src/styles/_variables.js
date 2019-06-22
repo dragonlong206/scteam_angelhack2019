@@ -22,6 +22,7 @@ export const colorRed = '#f62c73';
 export const colorBlack = '#272821';
 export const colorWhite100 = '#fff';
 export const colorGreen = '#22DD2D';
+export const colorGray = '#cccccc';
 
 // Colors palette
 export const primaryColor = '#F32727';

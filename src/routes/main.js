@@ -2,12 +2,12 @@
  * @Author: Haz
  * @Date: 2019-05-23 10:51:29
  * @Last Modified by: Haz
- * @Last Modified time: 2019-06-22 15:25:10
+ * @Last Modified time: 2019-06-22 20:28:58
  */
 import React from 'react';
 import { Icon } from 'react-native-elements';
 import { createBottomTabNavigator } from 'react-navigation';
-import { View } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 
 import i18n from '../lang/index';
 import HomeScreen from '../views/home';
@@ -26,6 +26,7 @@ import {
   colorWhite,
   fontSizeIcon
 } from '../styles/_variables';
+import TabHeader from '../components/tabHeader';
 
 const tabNavigationBottom = createBottomTabNavigator(
   {
@@ -144,7 +145,7 @@ tabNavigationBottom.navigationOptions = ({ navigation }) => {
       title = 'Profile';
       break;
     case ADDEVERYTHING:
-      title = 'Add';
+      title = <TabHeader />;
       break;
     default:
       title = 'Home';
