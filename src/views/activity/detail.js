@@ -27,7 +27,9 @@ export default class ActivityDetail extends PureComponent {
 
     return (
       <View>
-        <View />
+        <View>
+          
+        </View>
         <View>
           <ButtonGroup
             onPress={this.updateIndex}
