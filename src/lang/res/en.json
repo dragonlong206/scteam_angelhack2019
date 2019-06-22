@@ -9,4 +9,10 @@
   "group": "Nhóm",
   "option": "Thêm",
   "rev_exp": "Thu chi"
+  "group":"Nhóm",
+  "debting_user": "Bạn đang nợ",
+  "debted_user": "Bạn bị nợ",
+  "debting": "Nợ bạn",
+  "debted": "Bạn nợ",
+  "option":"Thêm"
 }
