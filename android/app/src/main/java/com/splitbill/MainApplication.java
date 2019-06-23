@@ -3,7 +3,6 @@ package com.splitbill;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import io.realm.react.RealmReactPackage;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -12,7 +11,6 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import org.pgsqlite.SQLitePluginPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,9 +26,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-        new SQLitePluginPackage(),
           new MainReactPackage(),
-            new RealmReactPackage(),
             new RNI18nPackage(),
             new AsyncStoragePackage(),
             new VectorIconsPackage(),
