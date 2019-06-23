@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { List, ListItem, Icon } from 'react-native-elements';
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, Text, View, Image, Dimensions } from 'react-native';
 import { ItemSeparator } from '../../components/itemSeparator';
 import activityDetails from '../../../data/activity_details.json';
 import _ from 'lodash';
@@ -51,6 +51,7 @@ export default class Detail extends PureComponent {
         data={this.state.data}
         keyExtractor={item => item.id.toString()}
         ItemSeparatorComponent={() => <ItemSeparator />}
+        ListFooterComponent={() => <Image source={require("../../assets/payment.jpg")} style={{width: Dimensions.get('window').width}} resizeMode="contain" />}
         renderItem={({ item }) => (
           <ListItem
             title={item.description}

@@ -28,8 +28,8 @@ export default class Home extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      value1: numeral(home[0].amount).format('0,0') + "VND",
-      value2: numeral(home[1].amount).format('0,0')+ "VND",
+      value1: numeral(home[0].amount).format('0.0a') + "VND",
+      value2: numeral(home[1].amount).format('0.0a')+ "VND",
       data: home
     };
   }
@@ -40,7 +40,7 @@ export default class Home extends PureComponent {
         style={{ flex: 1, flexDirection: "row", justifyContent: "flex-end" }}
       >
         <View>
-          <Text>{numeral(amount).format('0,0')}VND</Text>
+          <Text style={{ fontSize: 16, fontWeight: "bold", marginTop : 10, marginBottom: 10, color: amount > 0 ? 'green' : 'red' }}>{numeral(amount).format('0.0a')}VND</Text>
         </View>
         <View>
           <Icon name="navigate-next" type="material-icon" />

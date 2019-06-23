@@ -20,7 +20,7 @@ const StacksOverTabs = {
   [DETAIL]: {
     screen: DetailScreen,
     navigationOptions: ({ navigation }) => {
-      return { ...stackNavigationOptions, headerTitle: 'aaaaa' };
+      return { ...stackNavigationOptions, headerTitle: 'Lịch sử thu chi' };
     }
   },
   [ACTIVITY_DETAIL]: {
