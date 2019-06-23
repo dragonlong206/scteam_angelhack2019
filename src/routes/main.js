@@ -2,7 +2,7 @@
  * @Author: Haz
  * @Date: 2019-05-23 10:51:29
  * @Last Modified by: Haz
- * @Last Modified time: 2019-06-23 01:10:59
+ * @Last Modified time: 2019-06-23 09:39:17
  */
 import React from 'react';
 import { Icon } from 'react-native-elements';
@@ -156,7 +156,7 @@ tabNavigationBottom.navigationOptions = ({ navigation }) => {
       title = <TabHeader />;
       break;
     default:
-      title = 'Home';
+      title = 'Tổng quan';
       break;
   }
   return {

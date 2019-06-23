@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 import {
   View,
   TouchableOpacity,
@@ -6,13 +6,13 @@ import {
   StyleSheet,
   FlatList,
   Image
-} from "react-native";
-import { List, ListItem, Text } from "react-native-elements";
-import i18n from "../../lang/index";
-import { Input, Icon } from "react-native-elements";
-import { DETAIL } from "../../routes/type";
-import home from "../../../data/home.json";
-import { ItemSeparator } from "../../components/itemSeparator";
+} from 'react-native';
+import { List, ListItem, Text } from 'react-native-elements';
+import i18n from '../../lang/index';
+import { Input, Icon } from 'react-native-elements';
+import { DETAIL } from '../../routes/type';
+import home from '../../../data/home.json';
+import { ItemSeparator } from '../../components/itemSeparator';
 import {
   colorGray,
   fontSizeCaption,
@@ -20,16 +20,16 @@ import {
   fontSizeIcon,
   homeContainer,
   borderColor
-} from "../../styles/_variables";
-import style from "../../styles";
-import numeral from "numeral";
+} from '../../styles/_variables';
+import style from '../../styles';
+import numeral from 'numeral';
 
 export default class Home extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      value1: numeral(home[0].amount).format('0.0a') + "VND",
-      value2: numeral(home[1].amount).format('0.0a')+ "VND",
+      value1: numeral(home[0].amount).format('0a'),
+      value2: numeral(home[1].amount).format('0a'),
       data: home
     };
   }
@@ -37,10 +37,25 @@ export default class Home extends PureComponent {
   renderRightElement = amount => {
     return (
       <View
-        style={{ flex: 1, flexDirection: "row", justifyContent: "flex-end" }}
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'flex-end',
+          alignItems: 'center'
+        }}
       >
         <View>
-          <Text style={{ fontSize: 16, fontWeight: "bold", marginTop : 10, marginBottom: 10, color: amount > 0 ? 'green' : 'red' }}>{numeral(amount).format('0.0a')}VND</Text>
+          <Text
+            style={{
+              fontSize: 16,
+              fontWeight: 'bold',
+              marginTop: 10,
+              marginBottom: 10,
+              color: amount > 0 ? 'green' : 'red'
+            }}
+          >
+            {numeral(amount).format('0a')}
+          </Text>
         </View>
         <View>
           <Icon name="navigate-next" type="material-icon" />
@@ -53,34 +68,54 @@ export default class Home extends PureComponent {
     const { value1, value2 } = this.state;
     return (
       <View>
-        <View style={{ flexDirection: "row", backgroundColor: borderColor }}>
+        <View style={{ flexDirection: 'row', backgroundColor: borderColor }}>
           <View
             style={{
-              alignItems: "center",
-              alignContent: "center",
-              fontWeight: "bold",
+              alignItems: 'center',
+              alignContent: 'center',
+              fontWeight: 'bold',
               flex: 0.5,
-              borderRightColor: "#333",
+              borderRightColor: '#333',
               borderRightWidth: 0.6666666
             }}
           >
-            <Text style={{ fontSize: 14, fontWeight: "bold", marginTop : 10 }}>
-              {i18n.t("debting_user")}
+            <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 10 }}>
+              {i18n.t('debting_user')}
             </Text>
-            <Text style={{ fontSize: 16, fontWeight: "bold", marginTop : 10, marginBottom: 10, color:'red' }}>{value1}</Text>
+            <Text
+              style={{
+                fontSize: 16,
+                fontWeight: 'bold',
+                marginTop: 10,
+                marginBottom: 10,
+                color: 'red'
+              }}
+            >
+              {value1}
+            </Text>
           </View>
           <View
             style={{
-              alignItems: "center",
-              alignContent: "center",
-              fontWeight: "bold",
+              alignItems: 'center',
+              alignContent: 'center',
+              fontWeight: 'bold',
               flex: 0.5
             }}
           >
-            <Text style={{ fontSize: 14, fontWeight: "bold", marginTop : 10}}>
-              {i18n.t("debted_user")}
+            <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 10 }}>
+              {i18n.t('debted_user')}
             </Text>
-            <Text style={{ fontSize: 16, fontWeight: "bold", marginTop : 10, marginBottom: 10,color:'green' }}>{value2}</Text>
+            <Text
+              style={{
+                fontSize: 16,
+                fontWeight: 'bold',
+                marginTop: 10,
+                marginBottom: 10,
+                color: 'green'
+              }}
+            >
+              {value2}
+            </Text>
           </View>
         </View>
         <View>
@@ -97,9 +132,9 @@ export default class Home extends PureComponent {
                   leftAvatar={{
                     rounded: true,
                     containerStyle: { margin: 5 },
-                    onPress: () => alert("hey"),
+                    onPress: () => alert('hey'),
                     source: { uri: item.avatar },
-                    size: "large"
+                    size: 'large'
                   }}
                   title={item.name}
                   subtitle={item.phoneNumber}
