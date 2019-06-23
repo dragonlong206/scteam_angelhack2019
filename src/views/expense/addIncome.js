@@ -92,6 +92,8 @@ class AddIncome extends PureComponent {
       });
       if (userSplits && userSplits.length > 0) {
         this.setState({ openCustomSplit: true });
+      } else {
+        this.setState({ splitIndex: 0 });
       }
     }
   }
@@ -131,20 +133,26 @@ class AddIncome extends PureComponent {
       return i.id === user.id;
     });
     _users[item].checked = !_users[item].checked;
+
     if (_users[item].checked == true) {
-      _userSplits.push({ ..._users[item], isSplitMoney: false });
+      let userChoose = _users[item];
+      userChoose.isSplitMoney = false;
+      _userSplits.push(userChoose);
     } else {
-      _.remove(_userSplits, item => {
-        return item.id == _users[item].id;
-      });
+      if (item >= 0 && _users && _users[item]) {
+        _.remove(_userSplits, i => {
+          return i.id == _users[item].id;
+        });
+      }
     }
+    
     this.setState({
       users: _users,
       userSplits: _userSplits
     });
   };
-  
-  onChangeSplitType  = user => {
+
+  onChangeSplitType = user => {
     let { userSplits } = this.state;
 
     const _userSplits = _.clone(userSplits);
@@ -156,7 +164,7 @@ class AddIncome extends PureComponent {
     this.setState({
       userSplits: _userSplits
     });
-  }
+  };
 
   renderUsersplit = () => {
     const { users } = this.state;
