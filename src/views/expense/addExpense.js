@@ -242,6 +242,12 @@ class AddExpense extends PureComponent {
             />
           </View>
         </View>
+        <View style={style.formItem}>
+          <View style={incomeStyle.buttonActionWrapper}>
+            <Button style={{ marginBottom: 10 }} title="Lưu" onPress={() => { alert('Lưu thành công')}} />
+            <Button title="Huỷ bỏ" type="outline" />
+          </View>
+        </View>
       </View>
     );
   }

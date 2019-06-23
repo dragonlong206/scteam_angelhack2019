@@ -145,7 +145,7 @@ class AddIncome extends PureComponent {
         });
       }
     }
-    
+
     this.setState({
       users: _users,
       userSplits: _userSplits
@@ -369,7 +369,7 @@ class AddIncome extends PureComponent {
         </View>
         <View style={style.formItem}>
           <View style={incomeStyle.buttonActionWrapper}>
-            <Button style={{ marginBottom: 10 }} title="Lưu" />
+            <Button style={{ marginBottom: 10 }} title="Lưu" onPress={() => { alert('Lưu thành công')}} />
             <Button title="Huỷ bỏ" type="outline" />
           </View>
         </View>

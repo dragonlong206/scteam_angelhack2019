@@ -140,7 +140,7 @@ class AddActivity extends PureComponent {
         </View>
 
         <View style={{ padding: 10, marginTop: 10 }}>
-          <Button title="Lưu" raised={true} />
+          <Button title="Lưu" raised={true} onPress={() => { alert('Lưu thành công')}} />
           <Button
             title="Huỷ bỏ"
             type="outline"
