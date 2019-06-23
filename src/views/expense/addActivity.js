@@ -1,10 +1,11 @@
-import React, { PureComponent } from 'react';
-import { View, Text, Switch, StyleSheet } from 'react-native';
-import { Avatar, Input, Icon, Button } from 'react-native-elements';
-import { colorGray, colorWhite, colorBlack } from '../../styles/_variables';
-import { connect } from 'react-redux';
+import React, { PureComponent } from "react";
+import { View, Text, Switch, StyleSheet } from "react-native";
+import { Avatar, Input, Icon, Button } from "react-native-elements";
+import { colorGray, colorWhite, colorBlack } from "../../styles/_variables";
+import { connect } from "react-redux";
 import MultiSelect from "react-native-multiple-select";
-import style from '../../styles/addActivity';
+import style from "../../styles/addActivity";
+import Snackbar from "react-native-snackbar";
 const itemActivity = [
   {
     id: "1",
@@ -21,18 +22,18 @@ const itemActivity = [
 ];
 const styles = StyleSheet.create({
   info: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    flexDirection: 'row',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    flexDirection: "row",
     paddingTop: 10,
     paddingBottom: 10
   },
   itemLeft: {
     flex: 1,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
   itemRight: {
     flex: 5
@@ -44,15 +45,15 @@ const styles = StyleSheet.create({
     paddingBottom: 5
   },
   groupTag: {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'row',
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "row",
     marginTop: 5
   },
   itemTag: {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'row',
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "row",
     backgroundColor: colorGray,
     paddingBottom: 5,
     paddingTop: 5,
@@ -68,27 +69,26 @@ class AddActivity extends PureComponent {
     this.state = {
       selectedItems: [],
       switchValue: false
-    }
+    };
   }
   // state = {switchValue:false}
-  toggleSwitch = (value) => {
+  toggleSwitch = value => {
     //onValueChange of the switch this function will be called
-    this.setState({ switchValue: value })
+    this.setState({ switchValue: value });
     //state changes according to switch
     //which will result in re-render the text
-  }
+  };
 
   onSelectedActivity = selectedItems => {
     this.setState({ selectedItems });
   };
-  
-  render() {
 
+  render() {
     return (
       <View style={styles.container}>
         <View style={styles.info}>
           <View style={styles.itemLeft}>
-            <Avatar size="medium" rounded icon={{ name: 'image' }} />
+            <Avatar size="medium" rounded icon={{ name: "image" }} />
           </View>
           <View style={styles.itemRight}>
             <Input placeholder="Tên hoạt động" />
@@ -101,7 +101,8 @@ class AddActivity extends PureComponent {
           <View>
             <Switch
               onValueChange={this.toggleSwitch}
-              value={this.state.switchValue} />
+              value={this.state.switchValue}
+            />
           </View>
         </View>
         <View style={style.select}>
@@ -140,7 +141,16 @@ class AddActivity extends PureComponent {
         </View>
 
         <View style={{ padding: 10, marginTop: 10 }}>
-          <Button title="Lưu" raised={true} onPress={() => { alert('Lưu thành công')}} />
+          <Button
+            title="Lưu"
+            raised={true}
+            onPress={() => {
+              Snackbar.show({
+                title: "Lưu thành công!",
+                duration: Snackbar.LENGTH_LONG
+              });
+            }}
+          />
           <Button
             title="Huỷ bỏ"
             type="outline"

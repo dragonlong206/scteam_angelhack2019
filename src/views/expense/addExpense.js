@@ -15,6 +15,7 @@ import incomeStyle from "../../styles/addIncome";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import moment from "moment";
 import { connect } from "react-redux";
+import Snackbar from "react-native-snackbar";
 import _ from "lodash";
 
 const itemActivity = [
@@ -84,7 +85,7 @@ class AddExpense extends PureComponent {
   updateIndexSplit(selectedIndex) {
     this.setState({ splitIndex: selectedIndex });
   }
-  
+
   onSelectedPayer = selectedIndex => {
     this.setState({ payer: selectedIndex });
   };
@@ -244,7 +245,16 @@ class AddExpense extends PureComponent {
         </View>
         <View style={style.formItem}>
           <View style={incomeStyle.buttonActionWrapper}>
-            <Button style={{ marginBottom: 10 }} title="Lưu" onPress={() => { alert('Lưu thành công')}} />
+            <Button
+              style={{ marginBottom: 10 }}
+              title="Lưu"
+              onPress={() => {
+                Snackbar.show({
+                  title: "Lưu thành công!",
+                  duration: Snackbar.LENGTH_LONG
+                });
+              }}
+            />
             <Button title="Huỷ bỏ" type="outline" />
           </View>
         </View>

@@ -13,6 +13,7 @@ import MultiSelect from "react-native-multiple-select";
 import style from "../../styles/component";
 import incomeStyle from "../../styles/addIncome";
 import DateTimePicker from "react-native-modal-datetime-picker";
+import Snackbar from 'react-native-snackbar';
 import moment from "moment";
 import { connect } from "react-redux";
 import _ from "lodash";
@@ -227,7 +228,12 @@ class AddSponsor extends PureComponent {
         </View>
         <View style={style.formItem}>
           <View style={incomeStyle.buttonActionWrapper}>
-            <Button style={{ marginBottom: 10 }} title="Lưu" onPress={() => { alert('Lưu thành công')}} />
+            <Button style={{ marginBottom: 10 }} title="Lưu" onPress={() => {
+                Snackbar.show({
+                  title: 'Lưu thành công!', 
+                  duration: Snackbar.LENGTH_LONG,
+              });
+            }} />
             <Button title="Huỷ bỏ" type="outline" />
           </View>
         </View>

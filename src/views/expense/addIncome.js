@@ -17,6 +17,7 @@ import moment from "moment";
 import { connect } from "react-redux";
 import _ from "lodash";
 import Modal from "react-native-modal";
+import Snackbar from "react-native-snackbar";
 
 const itemActivity = [
   {
@@ -188,6 +189,13 @@ class AddIncome extends PureComponent {
       );
     });
     return result;
+  };
+
+  showSnackbar = () => {
+    Snackbar.show({
+      title: "Lưu thành công!",
+      duration: Snackbar.LENGTH_LONG
+    });
   };
 
   renderCustomSplit = () => {
@@ -369,7 +377,13 @@ class AddIncome extends PureComponent {
         </View>
         <View style={style.formItem}>
           <View style={incomeStyle.buttonActionWrapper}>
-            <Button style={{ marginBottom: 10 }} title="Lưu" onPress={() => { alert('Lưu thành công')}} />
+            <Button
+              style={{ marginBottom: 10 }}
+              title="Lưu"
+              onPress={() => {
+                this.showSnackbar();
+              }}
+            />
             <Button title="Huỷ bỏ" type="outline" />
           </View>
         </View>
