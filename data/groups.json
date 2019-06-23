@@ -1,0 +1,93 @@
+[{
+	"id": 1,
+	"name": "Super AngelHack",
+	"icon": "https://i.pravatar.cc/100?img=70",
+	"members": [{
+		"id": 1,
+		"name": "Long",
+		"avatar": "https://i.pravatar.cc/100?img=1",
+		"phoneNumber": "0999999999"
+	},
+	{
+		"id": 2,
+		"name": "Mỹ",
+		"avatar": "https://i.pravatar.cc/100?img=2",
+		"phoneNumber": "0388888888"
+	},
+	{
+		"id": 3,
+		"name": "Thanh",
+		"avatar": "https://i.pravatar.cc/100?img=3",
+		"phoneNumber": "0111222344"
+	},
+	{
+		"id": 4,
+		"name": "Minh",
+		"avatar": "https://i.pravatar.cc/100?img=4",
+		"phoneNumber": "1900555444"
+	},
+	{
+		"id": 5,
+		"name": "Ngọc Thanh",
+		"avatar": "https://i.pravatar.cc/100?img=5",
+		"phoneNumber": "0233333555"
+	}]
+},
+{
+	"id": 2,
+	"name": "Ăn kiêng",
+	"icon": "https://i.pravatar.cc/100?img=11",
+	"members": [{
+		"id": 5,
+		"name": "Bợm 1",
+		"avatar": "https://i.pravatar.cc/100?img=6",
+		"phoneNumber": "0999999999"
+	},
+	{
+		"id": 6,
+		"name": "Bợm 2",
+		"avatar": "https://i.pravatar.cc/100?img=7",
+		"phoneNumber": "02948558586"
+	},
+	{
+		"id": 7,
+		"name": "Bợm 3",
+		"avatar": "https://i.pravatar.cc/100?img=8",
+		"phoneNumber": "0955664434"
+	},
+	{
+		"id": 8,
+		"name": "Bợm 4",
+		"avatar": "https://i.pravatar.cc/100?img=9",
+		"phoneNumber": "03134445566"
+	}]
+},
+{
+	"id": 3,
+	"name": "Đời sinh viên",
+	"icon": "https://i.pravatar.cc/100?img=10",
+	"members": [{
+		"id": 9,
+		"name": "Tí",
+		"avatar": "https://i.pravatar.cc/100?img=13",
+		"phoneNumber": "0999999999"
+	},
+	{
+		"id": 10,
+		"name": "Tèo",
+		"avatar": "https://i.pravatar.cc/100?img=14",
+		"phoneNumber": "0388888888"
+	},
+	{
+		"id": 11,
+		"name": "Kẹo",
+		"avatar": "https://i.pravatar.cc/100?img=15",
+		"phoneNumber": "0995857575"
+	},
+	{
+		"id": 12,
+		"name": "Kéo",
+		"avatar": "https://i.pravatar.cc/100?img=12",
+		"phoneNumber": "07857676768"
+	}]
+}]
